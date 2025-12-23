@@ -16,7 +16,7 @@ import { Language, ThemeMode } from './types';
 const App: React.FC = () => {
   // --- State Management ---
   const [lang, setLang] = useState<Language>('en');
-  const [theme, setTheme] = useState<ThemeMode>('system');
+  const [theme, setTheme] = useState<ThemeMode>('dark');
   const [mounted, setMounted] = useState(false);
 
   // --- Derived Data ---
@@ -26,14 +26,34 @@ const App: React.FC = () => {
   // --- Theme Logic ---
   useEffect(() => {
     const root = window.document.documentElement;
-    const isDark = 
-      theme === 'dark' || 
-      (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    
+    const applyTheme = () => {
+      let isDark = false;
 
-    if (isDark) {
-      root.classList.add('dark');
-    } else {
-      root.classList.remove('dark');
+      if (theme === 'system') {
+        isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      } else if (theme === 'schedule') {
+        const hour = new Date().getHours();
+        isDark = hour < 7 || hour >= 19;
+      } else {
+        isDark = theme === 'dark';
+      }
+
+      if (isDark) {
+        root.classList.add('dark');
+      } else {
+        root.classList.remove('dark');
+      }
+    };
+
+    applyTheme();
+
+    // Optional: Listen for system changes if in system mode
+    if (theme === 'system') {
+      const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+      const handler = () => applyTheme();
+      mediaQuery.addEventListener('change', handler);
+      return () => mediaQuery.removeEventListener('change', handler);
     }
   }, [theme]);
 
@@ -96,7 +116,7 @@ const App: React.FC = () => {
             </motion.h1>
 
             <motion.div 
-              className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-100 dark:bg-primary-900/40 text-primary-700 dark:text-primary-200 text-sm font-medium mb-4 border border-primary-200 dark:border-primary-700/50"
+              className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-100 dark:bg-primary-900/60 text-primary-700 dark:text-primary-100 text-sm font-medium mb-4 border border-primary-200 dark:border-primary-700/50"
               layout
             >
               <Briefcase size={14} strokeWidth={1.5} />

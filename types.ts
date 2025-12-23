@@ -1,5 +1,5 @@
 export type Language = 'en' | 'es';
-export type ThemeMode = 'light' | 'dark' | 'system';
+export type ThemeMode = 'light' | 'dark' | 'system' | 'schedule';
 
 export interface SocialLinks {
   linkedin: string;

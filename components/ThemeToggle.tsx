@@ -1,5 +1,5 @@
 import React from 'react';
-import { Moon, Sun, Monitor } from 'lucide-react';
+import { Moon, Sun, Monitor, Clock } from 'lucide-react';
 import { ThemeMode } from '../types';
 import { motion } from 'framer-motion';
 
@@ -11,7 +11,7 @@ interface ThemeToggleProps {
 const ThemeToggle: React.FC<ThemeToggleProps> = ({ currentTheme, onThemeChange }) => {
   return (
     <div className="bg-white/50 dark:bg-black/20 backdrop-blur-sm p-1 rounded-full shadow-sm border border-white/40 dark:border-white/10 flex gap-1 items-center">
-      {(['light', 'system', 'dark'] as ThemeMode[]).map((mode) => (
+      {(['light', 'system', 'schedule', 'dark'] as ThemeMode[]).map((mode) => (
         <button
           key={mode}
           onClick={() => onThemeChange(mode)}
@@ -32,6 +32,7 @@ const ThemeToggle: React.FC<ThemeToggleProps> = ({ currentTheme, onThemeChange }
             {mode === 'light' && <Sun size={16} strokeWidth={2} />}
             {mode === 'dark' && <Moon size={16} strokeWidth={2} />}
             {mode === 'system' && <Monitor size={16} strokeWidth={2} />}
+            {mode === 'schedule' && <Clock size={16} strokeWidth={2} />}
           </span>
         </button>
       ))}
