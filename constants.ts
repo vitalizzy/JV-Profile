@@ -8,14 +8,14 @@ export const APP_DATA: AppData = {
   name: "Jesús Vita",
   // Using a high-quality placeholder that matches the vibe. 
   // Replace with your actual photo URL.
-  avatarUrl: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+  avatarUrl: "https://media.licdn.com/dms/image/v2/C4D03AQGVnBpwX-lNSQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1652892333632?e=1767830400&v=beta&t=pdvWHNK1NdzAs7WKSEjUk-dM12rs9Ljox2XwEavk_MI",
   
   // URL Links for buttons
   socialUrls: {
-    linkedin: "https://linkedin.com/in/jesusvita",
-    github: "https://github.com/jesusvita",
-    website: "https://jesusvita.com",
-    email: "contact@jesusvita.com"
+    linkedin: "https://www.linkedin.com/in/jes%C3%BAs-vita-mart%C3%ADnez-69178528/",
+    github: "https://github.com/vitalizzy",
+    website: "https://jesusvita.site",
+    email: "vitalizzy@gmail.com"
   },
 
   content: {
@@ -45,7 +45,7 @@ export const APP_DATA: AppData = {
         whatsapp: "Check out this amazing profile of Jesús Vita, a Product Manager!",
         twitter: "Just discovered this great portfolio from Jesús Vita. #ProductManagement #UX",
         emailSubject: "Professional Profile Recommendation",
-        emailBody: "Hi,\n\nI wanted to share this professional profile with you: https://jesusvita.com\n\nBest regards,"
+        emailBody: "Hi,\n\nI wanted to share this professional profile with you: https://jesusvita.site\n\nBest regards,"
       }
     },
     es: {
@@ -74,7 +74,7 @@ export const APP_DATA: AppData = {
         whatsapp: "¡Echa un vistazo al perfil profesional de Jesús Vita!",
         twitter: "Acabo de ver este excelente portafolio de Jesús Vita. #ProductManagement #UX",
         emailSubject: "Recomendación de Perfil Profesional",
-        emailBody: "Hola,\n\nQuería compartir este perfil profesional contigo: https://jesusvita.com\n\nSaludos,"
+        emailBody: "Hola,\n\nQuería compartir este perfil profesional contigo: https://jesusvita.site\n\nSaludos,"
       }
     }
   }

@@ -15,13 +15,13 @@ import { Language, ThemeMode } from './types';
 
 const App: React.FC = () => {
   // --- State Management ---
-  const [lang, setLang] = useState<Language>('es');
+  const [lang, setLang] = useState<Language>('en');
   const [theme, setTheme] = useState<ThemeMode>('system');
   const [mounted, setMounted] = useState(false);
 
   // --- Derived Data ---
   const t = APP_DATA.content[lang];
-  const currentUrl = typeof window !== 'undefined' ? window.location.href : 'https://jesusvita.com';
+  const currentUrl = typeof window !== 'undefined' ? window.location.href : 'https://jesusvita.site';
 
   // --- Theme Logic ---
   useEffect(() => {
